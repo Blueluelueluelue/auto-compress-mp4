@@ -1,6 +1,7 @@
-from os import listdir, rename
-from os.path import isfile, join
+from os import *
+from os.path import *
 import ffmpy
+
 
 videopath = 'E:/Work/Call Recordings'
 compressedpath = videopath + '/Compressed'
