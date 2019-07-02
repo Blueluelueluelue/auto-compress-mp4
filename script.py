@@ -20,7 +20,8 @@ if not exists(compressedpath):
     print('Created a new directory {} where the compressed files will be saved'.format(compressedpath))
 
 try:
-    videofilesmp4 = [f for f in listdir(videopath) if isfile(join(videopath, f)) and f.endswith('.mp4') and not f.startswith(alreadycompressedprefix)]
+    allfilesanddirs = listdir(videopath)
+    videofilesmp4 = [f for f in allfilesanddirs if isfile(join(videopath, f)) and f.endswith('.mp4') and not f.startswith(alreadycompressedprefix)]
 except:
     print('something went wrong')
 else:
