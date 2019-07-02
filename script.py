@@ -6,6 +6,7 @@ import sys
 videopath = getcwd()
 alreadycompressedprefix = 'done-'
 compressedfileprefix = 'compressed-'
+videopath = os.getcwd()
 
 if len(sys.argv) >= 2:
     videopath = sys.argv[1]
