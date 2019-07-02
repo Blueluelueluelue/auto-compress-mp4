@@ -6,14 +6,13 @@ import sys
 videopath = getcwd()
 alreadycompressedprefix = 'done-'
 compressedfileprefix = 'compressed-'
-videopath = os.getcwd()
 
 if len(sys.argv) >= 2:
     videopath = sys.argv[1]
     if not exists(videopath):
         print('provided path doesn\'t exist, exiting...')
         exit()
-compressedpath = videopath + '/Compressed'    
+compressedpath = join(videopath, 'Compressed' )   
 
 if not exists(compressedpath):
     mkdir(compressedpath)
