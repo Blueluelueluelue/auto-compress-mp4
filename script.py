@@ -3,16 +3,25 @@ from os.path import *
 import ffmpy
 import sys
 
-videopath = getcwd()
+
 alreadycompressedprefix = 'done-'
 compressedfileprefix = 'compressed-'
 
 if len(sys.argv) >= 2:
     videopath = sys.argv[1]
+    print(videopath)
     if not exists(videopath):
         print('provided path doesn\'t exist, exiting...')
         exit()
-compressedpath = join(videopath, 'Compressed' )   
+if len(sys.argv) >= 3:
+    compressedpath = sys.argv[2]
+    print(compressedpath)
+    if not exists(compressedpath):
+        print('provided destination doesn\'t exist, exiting... ')
+        exit()
+if len(sys.argv) == 1:
+    videopath = getcwd()
+    compressedpath = join(videopath, 'Compressed' )   
 
 if not exists(compressedpath):
     mkdir(compressedpath)
